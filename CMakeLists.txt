@@ -32,7 +32,7 @@ endif()
 add_executable(Tiny_Tanks
     ${SRC_FILES}
     ${HEADER_FILES}
-)
+ "include/widget/button.h")
 
 if (MSVC)
     target_compile_options(Tiny_Tanks PRIVATE /W4 /WX)
