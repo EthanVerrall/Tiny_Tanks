@@ -1,4 +1,5 @@
 #include "SFML/Graphics.hpp"
+#include "widget/widget.h"
 
 int main() {
 
@@ -11,7 +12,7 @@ int main() {
 
 	//Create main window loop
 	while (window.isOpen()) {
-		
+
 		//Poll for events
 		while (std::optional<sf::Event> current_event = window.pollEvent()) {
 
