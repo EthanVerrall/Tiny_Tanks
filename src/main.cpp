@@ -1,5 +1,20 @@
 #include "SFML/Graphics.hpp"
 #include "widget/widget.h"
+#include "utils/logger.h"
+
+// Set global logger settings (MUST be done before main)
+int              const ENABLED_LOG_LVLS	      = Log_lvl::ALL_LOG_LVLS;
+std::string_view const LOG_SPECIFIC_FILE_ONLY = "ALL";
+
+// Example logging:
+// 	LOG(Log_lvl::ERROR) << "No memory to create object in vector: " << 5;
+// Output for this is then:
+// 	[ERROR]
+// 	[Time: 20:17:54]
+// 	[File: main.cpp]
+// 	[Line: 18]
+// 	[Function: int __cdecl main(void)]
+// 	[Logger: No memory to create object in vector: 5]
 
 int main() {
 
