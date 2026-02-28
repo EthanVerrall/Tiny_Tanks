@@ -6,7 +6,7 @@
 // -------------------------------------------------------------------
 
 #include "SFML/Graphics.hpp"
-#include "iostream"
+#include "utils/logger.h"
 
 // ===================================================================
 // Namespaces
@@ -62,7 +62,7 @@ public:
 
         if (render_window == nullptr) {
 
-            std::cerr << "Render window pointer is null" << std::endl;
+            LOG(Log_lvl::ERROR) << "Render window pointer is null";
         } else {
 
             m_render_window = render_window;
