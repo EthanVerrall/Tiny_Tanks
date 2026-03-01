@@ -5,6 +5,8 @@
 // Includes
 // -------------------------------------------------------------------
 
+#include "SFML/Graphics.hpp"
+
 #include <string_view>
 
 // ===================================================================
@@ -35,7 +37,7 @@ inline sf::Color constexpr DEFAULT_TEXT_COLOR        = sf::Color::Black;
 inline sf::Color constexpr DEFAULT_WIDGET_BACKGROUND = sf::Color::Blue;
 
 // Fonts
-inline std::string_view const DEFAULT_TEXT_FONT = "../assets/fonts/Pennsylvania.otf";
+inline std::string_view const DEFAULT_TEXT_FONT = "assets/fonts/Pennsylvania.otf";
 
 } // tiny_tanks::utils
 

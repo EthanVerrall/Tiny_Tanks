@@ -35,13 +35,13 @@ enum class Widget_type {
 class Widget {
 
 protected:
-    explicit Widget(sf::RenderWindow const* render_window)
+    explicit Widget(sf::RenderWindow* render_window)
         : m_render_window(render_window)
         , m_origin       ({})
         , m_pos          ({})
     {}
 
-    sf::RenderWindow const* m_render_window;
+    sf::RenderWindow* m_render_window;
     sf::Vector2f            m_origin;
     sf::Vector2f            m_pos;
 
@@ -58,7 +58,7 @@ public:
 
     virtual void draw() = 0;
 
-    void set_render_target(sf::RenderWindow const* render_window) {
+    void set_render_target(sf::RenderWindow* render_window) {
 
         if (render_window == nullptr) {
 
