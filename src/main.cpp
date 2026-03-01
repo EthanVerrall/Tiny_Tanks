@@ -1,6 +1,6 @@
 #include "SFML/Graphics.hpp"
-#include "widget/widget.h"
 #include "utils/logger.h"
+#include "widget/basic_button.h"
 
 // Set global logger settings (MUST be done before main)
 int              const ENABLED_LOG_LVLS	      = Log_lvl::ALL_LOG_LVLS;

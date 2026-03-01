@@ -32,7 +32,7 @@ endif()
 add_executable(Tiny_Tanks
     ${SRC_FILES}
     ${HEADER_FILES}
- "include/widget/button.h")
+ "include/widget/button.h" "include/widget/basic_button.h")
 
 if (MSVC)
     target_compile_options(Tiny_Tanks PRIVATE /W4 /WX)
@@ -48,3 +48,9 @@ target_include_directories(Tiny_Tanks PUBLIC
 target_compile_features(Tiny_Tanks PRIVATE cxx_std_20)
 
 target_link_libraries(Tiny_Tanks PRIVATE SFML::Graphics SFML::Window SFML::System)
+
+if(EXISTS "${CMAKE_CURRENT_SOURCE_DIR}/assets")
+    file(COPY "${CMAKE_CURRENT_SOURCE_DIR}/assets" DESTINATION "${CMAKE_RUNTIME_OUTPUT_DIRECTORY}")
+else()
+    message(WARNING "assets folder not found")
+endif()

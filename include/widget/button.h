@@ -38,6 +38,7 @@
 */
 
 #include "widget/widget.h"
+#include <functional>
 
 namespace tiny_tanks::widget {
 
@@ -45,9 +46,14 @@ namespace tiny_tanks::widget {
 
 	protected:
 
-		bool m_visiable{};
-		bool m_hoverable{};
-		bool m_clickable{};
+		explicit Button(sf::RenderWindow* render_window) :
+			Widget(render_window), m_visiable(true), m_hoverable(true), m_clickable(true), m_callback({})
+			{}
+
+		bool m_visiable;
+		bool m_hoverable;
+		bool m_clickable;
+		std::function<void()> m_callback;
 	
 	public:
 
@@ -63,6 +69,8 @@ namespace tiny_tanks::widget {
 
 		virtual void set_origin(sf::Vector2f const& origin) = 0;
 
+		virtual Widget_type is() const = 0;
+
 		virtual void draw() = 0;
 
 		void virtual set_visiable(const bool visiable) = 0;
@@ -71,13 +79,17 @@ namespace tiny_tanks::widget {
 
 		void virtual set_clickable(const bool clickable) = 0;
 
+		void set_button_click_event(std::function<void()> callback) { m_callback = callback; }
+
 		bool get_visiable() const { return m_visiable; }
 
 		bool get_hoverable() const { return m_hoverable; }
 
 		bool get_clickable() const { return m_clickable; }
 
-		Widget_type is() const override { return Widget_type::Button; }
+		bool virtual is_hovered() const = 0;
+
+		void button_clicked() { m_callback(); }
 	};
 };
 
