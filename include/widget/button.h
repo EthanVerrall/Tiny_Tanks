@@ -69,6 +69,8 @@ namespace tiny_tanks::widget {
 
 		virtual void set_origin(sf::Vector2f const& origin) = 0;
 
+		virtual void move(const sf::Vector2f& delta_offset) = 0;
+		
 		virtual Widget_type is() const = 0;
 
 		virtual void draw() = 0;

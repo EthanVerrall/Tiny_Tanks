@@ -24,7 +24,8 @@ enum class Alignment {
     Right,
     Top,
     Bottom,
-    Center
+    Center,
+    None
 };
 
 // ===================================================================
