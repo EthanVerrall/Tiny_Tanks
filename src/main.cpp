@@ -18,12 +18,14 @@ std::string_view const LOG_SPECIFIC_FILE_ONLY = "ALL";
 
 int main() {
 
+	using namespace tiny_tanks::widget;
+
 	//Create default render window, not full screen, 8 levels of gpu anti aliasing
 	sf::ContextSettings settings;
 	settings.antiAliasingLevel = 8u;
 
 	//Here is the window
-	sf::RenderWindow window (sf::VideoMode({ 1200u,800u }), "Window", sf::Style::Default, sf::State::Windowed, settings);
+	sf::RenderWindow window(sf::VideoMode({ 1200u,800u }), "Window", sf::Style::Default, sf::State::Windowed, settings);
 
 	//Create main window loop
 	while (window.isOpen()) {
